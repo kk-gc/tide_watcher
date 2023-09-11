@@ -42,12 +42,7 @@ Highest tide in the next 7 days, height: 2.49m, when: Sunday, 17/09/23 at 14:54
 
 ## Usage
 
-Tide Watcher options:
-(a) next tide                                   (d) next high tide
-(b) next low tide                               (e) highest tide next 7 days
-(c) lowest tide next 7 days                     (f) exit
-Option: (a-f)
-
+TBA
 
 ## Contributing
 
