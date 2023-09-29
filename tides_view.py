@@ -13,9 +13,8 @@ class TidesView:
     def start_view() -> str:
         print('=' * 65)
         print('Tide Watcher options:')
-        print('(a) next tide\t\t\t\t\t(d) next high tide')
-        print('(b) next low tide\t\t\t\t(e) highest tide next 7 days')
-        print('(c) lowest tide next 7 days\t\t(f) exit')
+        print(f'[0] last - [1] next - [2] next low - [3] lowest next 7 days - [4] next high')
+        print(f'[5] highest next 7 days - [6] exit')
         return input('Option: ')
 
     @staticmethod
