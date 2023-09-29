@@ -11,12 +11,12 @@ class TidesController:
         self._tv = TidesView()
 
     def main(self) -> None:
-        implemented_options = {'a': self.next_tide,
-                               'b': self.next_low_tide,
-                               'c': self.next_lowest_tide,
-                               'd': self.next_high_tide,
-                               'e': self.next_highest_tide,
-                               'l': self.last_tide,
+        implemented_options = {'0': self.last_tide,
+                               '1': self.next_tide,
+                               '2': self.next_low_tide,
+                               '3': self.next_lowest_tide,
+                               '4': self.next_high_tide,
+                               '5': self.next_highest_tide,
                                }
         while True:
             chosen_option = self._tv.start_view()
