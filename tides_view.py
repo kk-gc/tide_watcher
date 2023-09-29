@@ -22,6 +22,11 @@ class TidesView:
     def exit_view() -> None:
         print('Bye!')
 
+    def last_tide_view(self, tide: Tide) -> None:
+        print(f'\nLast tide: {tide.state}, '
+              f'height: {tide.size_as_float}m, '
+              f'when: {datetime.datetime.strftime(tide.datetime_weekly, self.date_formatting_str)}\n')
+
     def next_tide_view(self, tide: Tide) -> None:
         print(f'\nNext tide: {tide.state}, '
               f'height: {tide.size_as_float}m, '

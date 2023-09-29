@@ -203,11 +203,18 @@ class TidesQueries:
     """
     def __init__(self, tides_weekly):
         self.data = tides_weekly.data
+        self.last_tide = self._get_last_tide()
         self.next_tide = self._get_next_tide()
         self.next_low_tide = self._get_next_low_tide()
         self.next_lowest_tide = self._get_next_lowest_tide()
         self.next_high_tide = self._get_next_high_tide()
         self.next_highest_tide = self._get_next_highest_tide()
+
+    def _get_last_tide(self):
+        now = datetime.datetime.now()
+        for tide in self.data:
+            if tide.datetime_weekly - now < datetime.timedelta(0):
+                return tide
 
     def _get_next_tide(self):
         now = datetime.datetime.now()

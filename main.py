@@ -16,6 +16,7 @@ class TidesController:
                                'c': self.next_lowest_tide,
                                'd': self.next_high_tide,
                                'e': self.next_highest_tide,
+                               'l': self.last_tide,
                                }
         while True:
             chosen_option = self._tv.start_view()
@@ -24,6 +25,9 @@ class TidesController:
             else:
                 self._tv.exit_view()
                 break
+
+    def last_tide(self) -> None:
+        self._tv.last_tide_view(self._tm.tides_queries.last_tide)
 
     def next_tide(self) -> None:
         self._tv.next_tide_view(self._tm.tides_queries.next_tide)
