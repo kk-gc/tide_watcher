@@ -212,9 +212,11 @@ class TidesQueries:
 
     def _get_last_tide(self):
         now = datetime.datetime.now()
-        for tide in self.data:
-            if tide.datetime_weekly - now < datetime.timedelta(0):
-                return tide
+        for i in range(len(self.data)):
+            if self.data[i].datetime_weekly - now > datetime.timedelta(0):
+                if i == 0:
+                    return None
+                return self.data[i - 1]
 
     def _get_next_tide(self):
         now = datetime.datetime.now()
