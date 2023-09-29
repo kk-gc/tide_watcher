@@ -27,7 +27,11 @@ class TidesController:
                 break
 
     def last_tide(self) -> None:
-        self._tv.last_tide_view(self._tm.tides_queries.last_tide)
+        # if no data for 'last tide' (we still before the first tide we fetch)
+        if self._tm.tides_queries.last_tide:
+            self._tv.last_tide_view(self._tm.tides_queries.last_tide)
+        else:
+            self._tv.last_tide_non_existent_view()
 
     def next_tide(self) -> None:
         self._tv.next_tide_view(self._tm.tides_queries.next_tide)

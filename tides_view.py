@@ -26,6 +26,11 @@ class TidesView:
               f'height: {tide.size_as_float}m, '
               f'when: {datetime.datetime.strftime(tide.datetime_weekly, self.date_formatting_str)}\n')
 
+    def last_tide_non_existent_view(self) -> None:
+        print(f'\nSorry, at this time: '
+              f'({datetime.datetime.strftime(datetime.datetime.now(), self.date_formatting_str)}) '
+              f'we don\'t have data for the last tide\n')
+
     def next_tide_view(self, tide: Tide) -> None:
         print(f'\nNext tide: {tide.state}, '
               f'height: {tide.size_as_float}m, '
